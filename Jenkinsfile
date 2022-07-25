@@ -8,6 +8,9 @@ pipeline {
                 checkout scm
                 script {
                     echo 'Build Project'
+                    sh """
+                        git branch -v
+                    """
                 }
             }
         }
