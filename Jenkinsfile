@@ -22,7 +22,7 @@ pipeline {
                     sh """
                         git checkout main
                         git rebase develop
-                        git status
+                        git push origin main
                     """
                 }
             }
