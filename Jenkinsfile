@@ -15,17 +15,19 @@ pipeline {
                 }
             }
         }
-        // stage('Merge') {
-        //     steps {
-        //         script {
-        //             echo 'Merge changes to main'
-        //             sh """
-        //                 git checkout main
-        //                 git rebase develop
-        //                 git push origin main
-        //             """
-        //         }
-        //     }
-        // }
+         stage('Merge') {
+             steps {
+                script {
+                    echo 'Merge changes to main'
+                    sshagent (credentials: ['jenkins-local']) {
+                        sh """
+                            git checkout main
+                            git rebase develop
+                            git push origin main
+                        """
+                    }
+                }
+             }
+         }
     }
 }
