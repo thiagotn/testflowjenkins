@@ -14,5 +14,16 @@ pipeline {
                 }
             }
         }
+        stage('Merge') {
+            steps {
+                script {
+                    echo 'Merge changes to master'
+                    sh """
+                        git checkout master
+                        git rebase develop
+                    """
+                }
+            }
+        }
     }
 }
