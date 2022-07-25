@@ -17,9 +17,9 @@ pipeline {
         stage('Merge') {
             steps {
                 script {
-                    echo 'Merge changes to master'
+                    echo 'Merge changes to main'
                     sh """
-                        git checkout master
+                        git checkout main
                         git rebase develop
                     """
                 }
