@@ -9,6 +9,7 @@ pipeline {
                 script {
                     echo 'Build Project'
                     sh """
+                        git checkout develop
                         git branch -v
                     """
                 }
@@ -21,6 +22,7 @@ pipeline {
                     sh """
                         git checkout main
                         git rebase develop
+                        git status
                     """
                 }
             }
