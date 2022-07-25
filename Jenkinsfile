@@ -4,7 +4,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Build Project'
+                deleteDir()
+                checkout scm
+                script {
+                    echo 'Build Project'
+                }
             }
         }
     }
