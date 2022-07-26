@@ -11,6 +11,11 @@ pipeline {
                     sh """
                         git checkout develop
                         git branch -v
+                        echo 'text here' >> README.md
+                        git status
+                        git add README.md
+                        git commit -am "teste"
+                        git push origin develop
                     """
                 }
             }
