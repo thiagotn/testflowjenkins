@@ -7,7 +7,7 @@ pipeline {
                 deleteDir()
                 checkout scm
                 script {
-                    echo 'Build Project']
+                    echo 'Build Project'
                     sshagent (credentials: ['jenkins-local']) {
                         sh """
                             git checkout develop
