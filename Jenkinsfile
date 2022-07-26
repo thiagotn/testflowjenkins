@@ -7,16 +7,18 @@ pipeline {
                 deleteDir()
                 checkout scm
                 script {
-                    echo 'Build Project'
-                    sh """
-                        git checkout develop
-                        git branch -v
-                        echo 'text here' >> README.md
-                        git status
-                        git add README.md
-                        git commit -am "teste"
-                        git push origin develop
-                    """
+                    echo 'Build Project']
+                    sshagent (credentials: ['jenkins-local']) {
+                        sh """
+                            git checkout develop
+                            git branch -v
+                            echo 'text here' >> README.md
+                            git status
+                            git add README.md
+                            git commit -am "teste"
+                            git push origin develop
+                        """
+                    }
                 }
             }
         }
