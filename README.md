@@ -2,4 +2,4 @@
 
 testando.
 
-versao: 1.1.2
+versao: 0.3.19
