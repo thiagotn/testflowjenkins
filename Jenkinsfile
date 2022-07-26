@@ -12,7 +12,7 @@ pipeline {
                         sh """
                             git checkout develop
                             git branch -v
-                            echo 'text here' >> README.md
+                            echo '\ntext here' >> README.md
                             git status
                             git add README.md
                             git commit -am "teste"
